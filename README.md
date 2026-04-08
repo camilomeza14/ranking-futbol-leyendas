@@ -7,4 +7,4 @@ Este es un proyecto web académico desarrollado en **Riwi**.
 * CSS3 (Diseño editorial oscuro y minimalista)
 
 ## Créditos
-Diseñado & desarrollado por **Camilo Ríos**.
+Diseñado & desarrollado por **Camilo Meza**.
