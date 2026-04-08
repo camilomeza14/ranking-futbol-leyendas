@@ -1,0 +1,52 @@
+/* =============================================================================
+   1. RESET, TIPOGRAFÍA Y VARIABLES GLOBALES
+   ============================================================================= */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta de colores Premium */
+    --negro-absoluto: #040404;   /* Negro corporativo profundo */
+    --negro-suave:    #0e0e0e;   /* Fondo secundario */
+    --gris-fondo:     #1a1a1a;   /* Tarjetas */
+    --blanco-premium: #fcfaf5;   /* Blanco cálido editorial */
+    --gris-texto:     #acacac;   /* Texto secundario */
+    --dorado:         #cfa04c;   /* Accent color */
+    --dorado-brillante: #f0c97d; /* Hover accent */
+    --linea:          #2c2c2c;   /* Divisores discretos */
+
+    /* Tipografía Profesional */
+    --serif: 'Cormorant Garamond', Georgia, serif; /* Editorial y elegante */
+    --sans:  'Outfit', sans-serif;                /* Moderna y legible */
+
+    /* Espaciado base y fluidez */
+    --gap: 1.5rem;
+    --border-radius: 4px; /* Minimalista y limpio */
+}
+
+/* =============================================================================
+   2. ESTILOS DE BODY
+   ============================================================================= */
+body {
+    background-color: var(--negro-absoluto);
+    color: var(--blanco-premium);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.75; /* Legibilidad profesional */
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* =============================================================================
+   3. HERO: ENCABEZADO EDITORIAL
+   ============================================================================= */
+.hero {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: clamp(4rem, 10vw, 8rem) 2rem clamp(3rem, 8vw, 6rem);
+    text-align: center;
+    position: relative;
+}
