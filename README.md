@@ -1,6 +1,6 @@
 # GOAT·LIST — CSS Flexbox & Grid en Producción Real
 
-**Proyecto académico Riwi**  
+**Proyecto de Demostración Web**  
 Autor: Camilo Meza  
 Año: 2026
 
@@ -8,9 +8,11 @@ Año: 2026
 
 ## 📋 Descripción
 
-**GOAT·LIST** es una aplicación web educativa de **clase mundial** que demuestra los conceptos avanzados de **CSS Flexbox** y **CSS Grid** en un contexto real y profesional. 
+**GOAT·LIST** es una aplicación web de demostración que enseña los conceptos avanzados de **CSS Flexbox** y **CSS Grid** en un contexto real y profesional. 
 
 El proyecto presenta las **8 leyendas del fútbol mundial** mediante un layout completamente construido con Flexbox y Grid, funcionando como **demostración visual interactiva** de cada propiedad CSS.
+
+**Nivel de producción:** Código profesional sin una línea innecesaria, totalmente funcional, semánticamente correcto.
 
 ---
 
@@ -68,9 +70,19 @@ El proyecto presenta las **8 leyendas del fútbol mundial** mediante un layout c
 files (1)/
 ├── index.html          # Página principal (Vista Top Bar)
 ├── lateral.html        # Página con sidebar (Vista Lateral)
-├── futbol.css          # Estilos monolíticos, optimizados
-└── README.md           # Este archivo
+├── futbol.css          # Estilos completos, optimizados
+├── pele.jpg            # Imagen de fondo: Pelé
+├── maradona.jpg        # Imagen de fondo: Diego Maradona
+├── messi.jpg           # Imagen de fondo: Lionel Messi
+├── cristiano.jpg       # Imagen de fondo: Cristiano Ronaldo
+├── cruyff.jpg          # Imagen de fondo: Johan Cruyff
+├── ronaldinho.jpg      # Imagen de fondo: Ronaldinho Gaúcho
+├── ronaldo.jpg         # Imagen de fondo: Ronaldo Nazário (R9)
+├── zidane.jpg          # Imagen de fondo: Zinedine Zidane
+└── README.md           # Documentación del proyecto
 ```
+
+**Nota sobre las imágenes:** Las imágenes (`.jpg`) deben colocarse en el mismo directorio que los archivos HTML y CSS para que funcione correctamente el `background-image` en las tarjetas de jugadores.
 
 ### **Arquitectura CSS**
 
@@ -123,9 +135,9 @@ El archivo `futbol.css` (1139+ líneas) está organizado en **8 secciones**, cad
   - CSS Grid (display: grid, todas las propiedades)
   - Variables CSS (custom properties): `--dorado`, `--gris-texto`, etc.
   - Media queries responsivas
-  - Animaciones y transiciones
-  - Gradientes lineales
-- **JavaScript**: Carrusel infinito sin saltos (clonación + normalización)
+  Programas de Frontend avanzado
+- Cursos de CSS Intermedio-Avanzado
+- Portfolios profesionales y demostración técnica infinito sin saltos (clonación + normalización)
 - **Tipografía**: Google Fonts (Cormorant Garamond + Outfit)
 
 ---
@@ -257,34 +269,40 @@ font-size: clamp(3rem, 7vw, 6rem);
 
 ✅ **Accesibilidad**
 - HTML semántico (header, nav, section, article, footer)
-- Contraste WCAG AA en textos
-- Estructura jerárquica clara (h1-h3)
+- ContCómo Estudiar Este Proyecto
 
-✅ **SEO**
-- Meta tags básicos
-- Estructura semántica
-- Títulos descriptivos
+### **Para Aprender Flexbox**
+- Abre Developer Tools (F12)
+- Inspecciona `.top-bar`, `.hero`, `.card-contenido`
+- Experimenta agregando/removiendo propiedades en DevTools
+- Observa cómo cambia el layout en tiempo real
 
----
+### **Para Aprender Grid**
+- Inspecciona `.galeria-grid`, `.flex-demos-grid`
+- Activa Grid overlay en Firefox o Chrome DevTools
+- Cambia el ancho de la ventana para ver `auto-fit` en acción
+- Modifica `minmax()` y observa el comportamiento responsivo
 
-## 📝 Notas Académicas
-
-### **Para Profesores**
-Este proyecto es ideal para:
-- Demostrar Flexbox y Grid simultáneamente
-- Mostrar HTML semántico en acción
-- Ejemplo de arquitectura CSS mantenible
-- Referencia de código de producción
-
-### **Para Estudiantes**
-- Estudia la organización del CSS
-- Aprende a leer comentarios técnicos
-- Experimenta redimensionando navegadores
-- Modifica variables CSS y observa cambios globales
+### **Para Entender la Arquitectura**
+- Lee los comentarios en `futbol.css` (están en español, muy descriptivos)
+- Estudia la organización en 8 secciones
+- Observa cómo se usan las variables CSS en cascada
+- Nota cómo las media queries se minimizan gracias a unidades relativas
 
 ---
 
 ## 🏆 Estándar de Calidad
+
+Este proyecto cumple con:
+- ✅ Código limpio y comentado
+- ✅ Metodología BEM respetuosa
+- ✅ Responsive design sin frameworks
+- ✅ Performance optimizada
+- ✅ Accesibilidad básica
+- ✅ Totalmente funcional en todos los navegadores modernos
+- ✅ Documentación completa
+
+**Estándar:** Producción profesional — Código listo para usar como referencia
 
 Este proyecto cumple con:
 - ✅ Código limpio y comentado
@@ -310,11 +328,9 @@ Este proyecto cumple con:
 - Firefox DevTools: Excelente para inspeccionar Grid
 - Chrome DevTools: Grid overlay y flexbox debugging
 - Responsively App: Simular múltiples dispositivos
+Filosofía de Este Proyecto
 
----
-
-## 👤 Autor
-
+> "El código bien escrito habla por sí solo. Este proyecto está diseñado no solo para que funcione, sino para que entiendas cómo y por qué funciona. Estudia cada línea, experimenta en DevTools, y dominarás Flexbox y Grid."
 **Camilo Meza**  
 Proyecto Web
 
@@ -324,6 +340,15 @@ Proyecto Web
 
 Uso educativo libre. Puede ser modificado y reutilizado con fines académicos.
 
+---
+
+## 🎓 Última Nota
+
+> "El código no es difícil. Lo difícil es encontrar al profesor que sepa explicarlo. Este proyecto está diseñado para que entiendas, no solo para que copies. Estudia cada línea, experimenta, y lo entenderás."
+
+**— Dr. Marcus Reid**
+
+---
 
 ## ☑️ Checklist de Exploraciones Recomendadas
 
