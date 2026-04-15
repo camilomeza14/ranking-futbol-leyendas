@@ -330,23 +330,11 @@ Este proyecto cumple con:
 - Responsively App: Simular múltiples dispositivos
 Filosofía de Este Proyecto
 
-> "El código bien escrito habla por sí solo. Este proyecto está diseñado no solo para que funcione, sino para que entiendas cómo y por qué funciona. Estudia cada línea, experimenta en DevTools, y dominarás Flexbox y Grid."
-**Camilo Meza**  
-Proyecto Web
-
 ---
 
 ## 📄 Licencia
 
 Uso educativo libre. Puede ser modificado y reutilizado con fines académicos.
-
----
-
-## 🎓 Última Nota
-
-> "El código no es difícil. Lo difícil es encontrar al profesor que sepa explicarlo. Este proyecto está diseñado para que entiendas, no solo para que copies. Estudia cada línea, experimenta, y lo entenderás."
-
-**— Dr. Marcus Reid**
 
 ---
 
