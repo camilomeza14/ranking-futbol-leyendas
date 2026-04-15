@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOAT·LIST | Los 4 Mejores de la Historia del Fútbol</title>
+    <title>GOAT·LIST | Los 8 Mejores de la Historia del Fútbol</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -11,23 +11,48 @@
 </head>
 <body>
 
+    <!-- ══════════════════════════════════════
+         TOP BAR
+         Flexbox: justify-content:space-between
+         ══════════════════════════════════════ -->
+    <div class="top-bar">
+        <div class="top-bar-info">PROYECTO ACADÉMICO · GOAT LIST</div>
+        <a href="lateral.html" class="btn-navegacion">Ir a menú lateral →</a>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         HERO
+         Flexbox: flex-direction:column
+         ══════════════════════════════════════ -->
     <header class="hero">
         <div class="hero-etiqueta">Fútbol · Historia · Leyendas</div>
         <h1 class="hero-titulo">
-            Los 4 Mejores<br>
+            Los 8 Mejores<br>
             <em>de la Historia</em>
         </h1>
         <p class="hero-descripcion">
-            Un análisis definitivo de los cuatro jugadores que redefinieron el fútbol mundial. 
+            Un análisis definitivo de los ocho jugadores que redefinieron el fútbol mundial. 
             Clasificados por impacto, palmarés, legado y dominio absoluto de su era. 
             No es opinión — es historia documentada.
         </p>
         <div class="hero-linea"></div>
     </header>
 
-    <main class="galeria-seccion">
+    <!-- ══════════════════════════════════════
+         SECCIÓN GALERÍA — 8 JUGADORES
+         CSS Grid: repeat(auto-fit, minmax())
+         ══════════════════════════════════════ -->
+    <section class="galeria-seccion">
+
+        <div class="seccion-titulo">
+            <h2>Los 8 Grandes del Fútbol</h2>
+            <span class="seccion-numero">VIII</span>
+            <span class="seccion-etiqueta showcase-tag">Hall of Fame</span>
+        </div>
+
         <div class="galeria-grid">
 
+            <!-- 1. PELÉ -->
             <article class="jugador-card">
                 <div class="card-imagen pele-bg">
                     <div class="card-numero">01</div>
@@ -42,17 +67,12 @@
                         <li><span class="stat-key">Mundiales</span><span class="stat-val">3 (58, 62, 70)</span></li>
                         <li><span class="stat-key">Balones de Oro</span><span class="stat-val">Honorífico FIFA</span></li>
                     </ul>
-                    <p class="card-desc">
-                        El único jugador en ganar tres Copas del Mundo. 
-                        Definió el fútbol moderno con una combinación de técnica, 
-                        velocidad y gol que nadie ha igualado.
-                    </p>
-                    <a href="https://es.wikipedia.org/wiki/Pel%C3%A9" target="_blank" class="card-link">
-                        Ver legado completo →
-                    </a>
+                    <p class="card-desc">El único jugador en ganar tres Copas del Mundo. Definió el fútbol moderno con una combinación de técnica, velocidad y gol que nadie ha igualado.</p>
+                    <a href="https://es.wikipedia.org/wiki/Pel%C3%A9" target="_blank" class="card-link">Ver legado completo →</a>
                 </div>
             </article>
 
+            <!-- 2. MARADONA -->
             <article class="jugador-card">
                 <div class="card-imagen maradona-bg">
                     <div class="card-numero">02</div>
@@ -67,17 +87,12 @@
                         <li><span class="stat-key">Serie A</span><span class="stat-val">2 títulos con Nápoles</span></li>
                         <li><span class="stat-key">Gol del Siglo</span><span class="stat-val">México, 22 jun 1986</span></li>
                     </ul>
-                    <p class="card-desc">
-                        El gol del siglo y la mano de Dios en un mismo partido. 
-                        Llevó a Argentina al título mundial y convirtió al Nápoles 
-                        en campeón de Italia casi en solitario.
-                    </p>
-                    <a href="https://es.wikipedia.org/wiki/Diego_Maradona" target="_blank" class="card-link">
-                        Ver legado completo →
-                    </a>
+                    <p class="card-desc">El gol del siglo y la mano de Dios en un mismo partido. Llevó a Argentina al título mundial y convirtió al Nápoles en campeón de Italia casi en solitario.</p>
+                    <a href="https://es.wikipedia.org/wiki/Diego_Maradona" target="_blank" class="card-link">Ver legado completo →</a>
                 </div>
             </article>
 
+            <!-- 3. MESSI -->
             <article class="jugador-card">
                 <div class="card-imagen messi-bg">
                     <div class="card-numero">03</div>
@@ -92,17 +107,12 @@
                         <li><span class="stat-key">Copa del Mundo</span><span class="stat-val">Qatar 2022</span></li>
                         <li><span class="stat-key">Goles con Barça</span><span class="stat-val">672 en 778 partidos</span></li>
                     </ul>
-                    <p class="card-desc">
-                        Ocho Balones de Oro, campeón del mundo, máximo goleador 
-                        histórico del FC Barcelona y de la selección argentina. 
-                        La estadística más completa de la historia.
-                    </p>
-                    <a href="https://es.wikipedia.org/wiki/Lionel_Messi" target="_blank" class="card-link">
-                        Ver legado completo →
-                    </a>
+                    <p class="card-desc">Ocho Balones de Oro, campeón del mundo, máximo goleador histórico del FC Barcelona y de la selección argentina. La estadística más completa de la historia.</p>
+                    <a href="https://es.wikipedia.org/wiki/Lionel_Messi" target="_blank" class="card-link">Ver legado completo →</a>
                 </div>
             </article>
 
+            <!-- 4. CRISTIANO -->
             <article class="jugador-card">
                 <div class="card-imagen cristiano-bg">
                     <div class="card-numero">04</div>
@@ -117,32 +127,566 @@
                         <li><span class="stat-key">Champions League</span><span class="stat-val">5 títulos</span></li>
                         <li><span class="stat-key">Goles totales</span><span class="stat-val">900+ (récord mundial)</span></li>
                     </ul>
-                    <p class="card-desc">
-                        El jugador más goleador de la historia en términos absolutos. 
-                        Ganó la Champions con tres clubes distintos y la Eurocopa 
-                        con Portugal en 2016.
-                    </p>
-                    <a href="https://es.wikipedia.org/wiki/Cristiano_Ronaldo" target="_blank" class="card-link">
-                        Ver legado completo →
-                    </a>
+                    <p class="card-desc">El jugador más goleador de la historia en términos absolutos. Ganó la Champions con tres clubes distintos y la Eurocopa con Portugal en 2016.</p>
+                    <a href="https://es.wikipedia.org/wiki/Cristiano_Ronaldo" target="_blank" class="card-link">Ver legado completo →</a>
+                </div>
+            </article>
+
+            <!-- 5. CRUYFF -->
+            <article class="jugador-card">
+                <div class="card-imagen cruyff-bg">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-contenido">
+                    <div class="card-badge">Países Bajos</div>
+                    <h2 class="card-nombre">Cruyff</h2>
+                    <p class="card-cargo">El Salvador del Fútbol</p>
+                    <ul class="card-stats">
+                        <li><span class="stat-key">Balones de Oro</span><span class="stat-val">3 (71, 73, 74)</span></li>
+                        <li><span class="stat-key">Champions Ajax</span><span class="stat-val">3 seguidas</span></li>
+                        <li><span class="stat-key">Títulos DT Barça</span><span class="stat-val">4 Ligas, 1 Champions</span></li>
+                    </ul>
+                    <p class="card-desc">Inventor del fútbol total. Padre intelectual del modelo Barcelona. Su legado como jugador y entrenador transformó para siempre el deporte.</p>
+                    <a href="https://es.wikipedia.org/wiki/Johan_Cruyff" target="_blank" class="card-link">Ver legado completo →</a>
+                </div>
+            </article>
+
+            <!-- 6. RONALDINHO -->
+            <article class="jugador-card">
+                <div class="card-imagen ronaldinho-bg">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-contenido">
+                    <div class="card-badge">Brasil</div>
+                    <h2 class="card-nombre">Ronaldinho</h2>
+                    <p class="card-cargo">El Mago del Balón</p>
+                    <ul class="card-stats">
+                        <li><span class="stat-key">Balones de Oro</span><span class="stat-val">2 (2004, 2005)</span></li>
+                        <li><span class="stat-key">Champions</span><span class="stat-val">Barcelona 2006</span></li>
+                        <li><span class="stat-key">Copa del Mundo</span><span class="stat-val">2002 Brasil</span></li>
+                    </ul>
+                    <p class="card-desc">El jugador más desequilibrante de los 2000. Convirtió al Barça en el mejor equipo del mundo con magia y alegría que nadie ha vuelto a igualar.</p>
+                    <a href="https://es.wikipedia.org/wiki/Ronaldinho" target="_blank" class="card-link">Ver legado completo →</a>
+                </div>
+            </article>
+
+            <!-- 7. R9 RONALDO -->
+            <article class="jugador-card">
+                <div class="card-imagen r9-bg">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-contenido">
+                    <div class="card-badge">Brasil</div>
+                    <h2 class="card-nombre">R9 Ronaldo</h2>
+                    <p class="card-cargo">El Fenómeno</p>
+                    <ul class="card-stats">
+                        <li><span class="stat-key">Balones de Oro</span><span class="stat-val">2 (97, 2002)</span></li>
+                        <li><span class="stat-key">Mundiales</span><span class="stat-val">2 (94, 2002)</span></li>
+                        <li><span class="stat-key">Goles Mundiales</span><span class="stat-val">15 (récord histórico)</span></li>
+                    </ul>
+                    <p class="card-desc">El delantero más completo de todos los tiempos. Velocidad explosiva, regate imposible y un olfato de gol que superó todos los récords mundialistas.</p>
+                    <a href="https://es.wikipedia.org/wiki/Ronaldo_Naz%C3%A1rio" target="_blank" class="card-link">Ver legado completo →</a>
+                </div>
+            </article>
+
+            <!-- 8. ZIDANE -->
+            <article class="jugador-card">
+                <div class="card-imagen zidane-bg">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-contenido">
+                    <div class="card-badge">Francia</div>
+                    <h2 class="card-nombre">Zidane</h2>
+                    <p class="card-cargo">El Maestro Elegante</p>
+                    <ul class="card-stats">
+                        <li><span class="stat-key">Balón de Oro</span><span class="stat-val">1998</span></li>
+                        <li><span class="stat-key">Copa del Mundo</span><span class="stat-val">Francia 1998</span></li>
+                        <li><span class="stat-key">Champions DT</span><span class="stat-val">3 seguidas Madrid</span></li>
+                    </ul>
+                    <p class="card-desc">Elegancia pura convertida en dominio. Campeón del mundo y de Europa como jugador. Como entrenador, tres Champions consecutivas con el Real Madrid.</p>
+                    <a href="https://es.wikipedia.org/wiki/Zinedine_Zidane" target="_blank" class="card-link">Ver legado completo →</a>
                 </div>
             </article>
 
         </div>
-    </main>
+    </section>
 
-    <footer class="footer-pro">
+    <!-- ══════════════════════════════════════
+         SECCIÓN FLEXBOX SHOWCASE
+         Demostración visual completa
+         ══════════════════════════════════════ -->
+    <section class="flex-showcase">
+        <div class="flex-showcase-titulo">
+            <h2>CSS Flexbox en Acción</h2>
+            <span class="showcase-tag">Flexbox Layout</span>
+        </div>
 
-        <div class="footer-grid">
+        <!-- Grid de demos — grid-template-areas -->
+        <div class="flex-demos-grid">
 
-            <div class="footer-col footer-marca">
-                <div class="footer-logo">GOAT<span>·LIST</span></div>
-                <p class="footer-slogan">
-                    El archivo definitivo del fútbol de élite. 
-                    Datos, historia y legado curados por expertos.
-                </p>
+            <!-- DEMO 1: flex-direction — los 4 valores -->
+            <div class="demo-card demo-direcciones">
+                <h3>flex-direction</h3>
+                <p class="demo-prop">display:flex · Eje principal · Eje cruzado</p>
+                <p>El <strong>eje principal</strong> sigue la dirección indicada. El <strong>eje cruzado</strong> es perpendicular. row y row-reverse van de forma horizontal; column y column-reverse van vertical.</p>
+                <div class="demo-area">
+                    <div class="demo-dir-label">row →</div>
+                    <div class="demo-row">
+                        <div class="demo-item">A</div>
+                        <div class="demo-item dim">B</div>
+                        <div class="demo-item dim">C</div>
+                    </div>
+                    <div class="demo-dir-label">row-reverse ←</div>
+                    <div class="demo-row-rev">
+                        <div class="demo-item">A</div>
+                        <div class="demo-item dim">B</div>
+                        <div class="demo-item dim">C</div>
+                    </div>
+                    <div class="demo-dir-label">column ↓</div>
+                    <div class="demo-col">
+                        <div class="demo-item">A</div>
+                        <div class="demo-item dim">B</div>
+                    </div>
+                    <div class="demo-dir-label">column-reverse ↑</div>
+                    <div class="demo-col-rev">
+                        <div class="demo-item">A</div>
+                        <div class="demo-item dim">B</div>
+                    </div>
+                </div>
             </div>
 
+            <!-- DEMO 2: justify-content -->
+            <div class="demo-card demo-justify">
+                <h3>justify-content</h3>
+                <p class="demo-prop">Distribución en el eje principal</p>
+                <p>Controla cómo se distribuyen los hijos a lo largo del <strong>eje principal</strong>. Los 5 valores más usados:</p>
+                <div class="demo-area">
+                    <div class="demo-dir-label">flex-start</div>
+                    <div class="demo-jc-start" style="margin-bottom:6px">
+                        <div class="demo-item">1</div><div class="demo-item dim">2</div><div class="demo-item dim">3</div>
+                    </div>
+                    <div class="demo-dir-label">center</div>
+                    <div class="demo-jc-center" style="margin-bottom:6px">
+                        <div class="demo-item">1</div><div class="demo-item dim">2</div><div class="demo-item dim">3</div>
+                    </div>
+                    <div class="demo-dir-label">flex-end</div>
+                    <div class="demo-jc-end" style="margin-bottom:6px">
+                        <div class="demo-item">1</div><div class="demo-item dim">2</div><div class="demo-item dim">3</div>
+                    </div>
+                    <div class="demo-dir-label">space-between</div>
+                    <div class="demo-jc-between" style="margin-bottom:6px">
+                        <div class="demo-item">1</div><div class="demo-item dim">2</div><div class="demo-item dim">3</div>
+                    </div>
+                    <div class="demo-dir-label">space-around</div>
+                    <div class="demo-jc-around">
+                        <div class="demo-item">1</div><div class="demo-item dim">2</div><div class="demo-item dim">3</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEMO 3: align-items -->
+            <div class="demo-card demo-align">
+                <h3>align-items</h3>
+                <p class="demo-prop">Alineación en el eje cruzado</p>
+                <p>Alinea todos los hijos en el <strong>eje cruzado</strong>. A diferencia de justify-content, actúa en la dirección perpendicular al eje principal.</p>
+                <div class="demo-area">
+                    <div class="demo-dir-label">flex-start</div>
+                    <div class="demo-ai" style="--ai:flex-start; margin-bottom:5px">
+                        <div class="demo-item">A</div>
+                        <div class="demo-item-tall">Tall</div>
+                        <div class="demo-item dim">B</div>
+                    </div>
+                    <div class="demo-dir-label">center</div>
+                    <div class="demo-ai" style="--ai:center; margin-bottom:5px">
+                        <div class="demo-item">A</div>
+                        <div class="demo-item-tall">Tall</div>
+                        <div class="demo-item dim">B</div>
+                    </div>
+                    <div class="demo-dir-label">flex-end</div>
+                    <div class="demo-ai" style="--ai:flex-end; margin-bottom:5px">
+                        <div class="demo-item">A</div>
+                        <div class="demo-item-tall">Tall</div>
+                        <div class="demo-item dim">B</div>
+                    </div>
+                    <div class="demo-dir-label">stretch (por defecto)</div>
+                    <div class="demo-ai" style="--ai:stretch">
+                        <div class="demo-item">A</div>
+                        <div class="demo-item-tall">Tall</div>
+                        <div class="demo-item dim">B</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEMO 4: flex-wrap -->
+            <div class="demo-card demo-wrap">
+                <h3>flex-wrap</h3>
+                <p class="demo-prop">wrap · nowrap · wrap-reverse · align-content</p>
+                <p>Controla si los hijos se fuerzan en una sola línea (nowrap) o saltan a la siguiente (wrap). align-content alinea las filas múltiples.</p>
+                <div class="demo-area">
+                    <div class="demo-dir-label">nowrap — todos en una línea</div>
+                    <div class="demo-wrap-box" style="--fw:nowrap; overflow:hidden; margin-bottom:8px">
+                        <div class="demo-item-sm">Pelé</div><div class="demo-item-sm">Maradona</div>
+                        <div class="demo-item-sm">Messi</div><div class="demo-item-sm">Cristiano</div>
+                        <div class="demo-item-sm">Cruyff</div><div class="demo-item-sm">Zidane</div>
+                    </div>
+                    <div class="demo-dir-label">wrap — salta a siguiente línea</div>
+                    <div class="demo-wrap-box" style="--fw:wrap; margin-bottom:8px">
+                        <div class="demo-item-sm">Pelé</div><div class="demo-item-sm">Maradona</div>
+                        <div class="demo-item-sm">Messi</div><div class="demo-item-sm">Cristiano</div>
+                        <div class="demo-item-sm">Cruyff</div><div class="demo-item-sm">Zidane</div>
+                    </div>
+                    <div class="demo-dir-label">wrap-reverse — líneas en orden inverso</div>
+                    <div class="demo-wrap-box" style="--fw:wrap-reverse">
+                        <div class="demo-item-sm">Pelé</div><div class="demo-item-sm">Maradona</div>
+                        <div class="demo-item-sm">Messi</div><div class="demo-item-sm">Cristiano</div>
+                        <div class="demo-item-sm">Cruyff</div><div class="demo-item-sm">Zidane</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEMO 5: order + flex-grow -->
+            <div class="demo-card demo-order-grow">
+                <h3>order · flex-grow</h3>
+                <p class="demo-prop">Reordenar y expandir hijos</p>
+                <p><strong>order</strong> cambia el orden visual sin modificar el HTML. <strong>flex-grow</strong> define cuánto espacio adicional absorbe cada hijo (proporcional).</p>
+                <div class="demo-area">
+                    <div class="demo-dir-label">order: 3 | 1 | 2 (HTML: A B C)</div>
+                    <div class="demo-order-row" style="margin-bottom:10px">
+                        <div class="demo-item" style="order:3">A (order:3)</div>
+                        <div class="demo-item dim" style="order:1">B (order:1)</div>
+                        <div class="demo-item dim" style="order:2">C (order:2)</div>
+                    </div>
+                    <div class="demo-dir-label">flex-grow: 1 | 2 | 3</div>
+                    <div style="display:flex; gap:4px; width:100%">
+                        <div class="demo-item" style="flex-grow:1; text-align:center; font-size:0.58rem">grow:1</div>
+                        <div class="demo-item dim" style="flex-grow:2; text-align:center; font-size:0.58rem">grow:2</div>
+                        <div class="demo-item dim" style="flex-grow:3; text-align:center; font-size:0.58rem">grow:3</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEMO 6: flex-basis + flex-shrink -->
+            <div class="demo-card demo-basis-shrink">
+                <h3>flex-basis · flex-shrink</h3>
+                <p class="demo-prop">Tamaño base y encogimiento</p>
+                <p><strong>flex-basis</strong> es el tamaño inicial ideal. <strong>flex-shrink</strong> define cuánto se reduce cada hijo cuando el espacio escasea. Mayor número = encoge más.</p>
+                <div class="demo-area">
+                    <div class="demo-dir-label">basis:200px shrink:0 | basis:100px shrink:1 | basis:100px shrink:2</div>
+                    <div style="display:flex; gap:4px; overflow:hidden; margin-bottom:10px">
+                        <div class="demo-item" style="flex-basis:200px; flex-shrink:0; font-size:0.55rem; text-align:center">200px · shrink:0</div>
+                        <div class="demo-item dim" style="flex-basis:100px; flex-shrink:1; font-size:0.55rem; text-align:center">100px · shrink:1</div>
+                        <div class="demo-item dim" style="flex-basis:100px; flex-shrink:2; font-size:0.55rem; text-align:center">100px · shrink:2</div>
+                    </div>
+                    <div class="demo-dir-label">flex shorthand: flex: grow shrink basis</div>
+                    <div style="display:flex; gap:4px">
+                        <div class="demo-item" style="flex: 1 0 auto; font-size:0.58rem; text-align:center">flex: 1 0 auto</div>
+                        <div class="demo-item dim" style="flex: 0 1 120px; font-size:0.58rem; text-align:center">flex: 0 1 120px</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEMO 7: align-self + align-content — ocupa las 3 columnas -->
+            <div class="demo-card demo-self-content">
+                <h3>align-self · align-content</h3>
+                <p class="demo-prop">Alineación individual y de múltiples líneas</p>
+                <p><strong>align-self</strong> sobreescribe align-items para un hijo específico. <strong>align-content</strong> distribuye las filas cuando hay flex-wrap activo.</p>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem">
+                    <div>
+                        <div class="demo-dir-label">align-self individual por hijo</div>
+                        <div class="demo-self-row">
+                            <div class="demo-item as-start" style="font-size:0.55rem; text-align:center">flex-start</div>
+                            <div class="demo-item dim as-center" style="font-size:0.55rem; text-align:center">center</div>
+                            <div class="demo-item dim as-end" style="font-size:0.55rem; text-align:center">flex-end</div>
+                            <div class="demo-item dim as-stretch" style="font-size:0.55rem; text-align:center">stretch</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="demo-dir-label">align-content: space-between (3 líneas)</div>
+                        <div class="demo-ac-box" style="--ac:space-between; height:120px; max-width:160px">
+                            <div class="demo-item-sm">A</div><div class="demo-item-sm">B</div><div class="demo-item-sm">C</div>
+                            <div class="demo-item-sm">D</div><div class="demo-item-sm">E</div><div class="demo-item-sm">F</div>
+                            <div class="demo-item-sm">G</div><div class="demo-item-sm">H</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECCIÓN CSS GRID SHOWCASE
+         Demostración visual completa
+         ══════════════════════════════════════ -->
+    <section class="grid-showcase">
+        <div class="grid-showcase-titulo">
+            <h2>CSS Grid Layout en Acción</h2>
+            <span class="showcase-tag">Grid Layout</span>
+        </div>
+
+        <div class="grid-demos-outer">
+
+            <!-- GDEMO 1: grid-template-columns + fr + gap + repeat -->
+            <div class="gdemo-card">
+                <h3>grid-template-columns · fr · gap · repeat()</h3>
+                <p class="demo-prop">Columnas explícitas con fracciones</p>
+                <p>La unidad <strong>fr</strong> divide el espacio disponible en fracciones proporcionales. <strong>repeat()</strong> evita repetir valores. <strong>gap</strong> es el espacio entre filas y columnas.</p>
+                <div class="demo-dir-label" style="margin-bottom:5px">grid-template-columns: 1fr 2fr 1fr (centro = doble)</div>
+                <div class="gdemo-cols" style="margin-bottom:12px">
+                    <div class="g-cell">1fr</div>
+                    <div class="g-cell accent">2fr</div>
+                    <div class="g-cell">1fr</div>
+                </div>
+                <div class="demo-dir-label" style="margin-bottom:5px">repeat(4, 1fr) — 4 columnas iguales</div>
+                <div class="gdemo-cols-eq">
+                    <div class="g-cell">Pelé</div>
+                    <div class="g-cell">Messi</div>
+                    <div class="g-cell">CR7</div>
+                    <div class="g-cell">Maradona</div>
+                </div>
+            </div>
+
+            <!-- GDEMO 2: grid-template-rows -->
+            <div class="gdemo-card">
+                <h3>grid-template-rows</h3>
+                <p class="demo-prop">Definición explícita de filas</p>
+                <p><strong>grid-template-rows</strong> define la altura de cada fila. Se pueden combinar px, fr, auto y minmax() para crear layouts con filas de tamaños intencionales.</p>
+                <div class="demo-dir-label" style="margin-bottom:5px">grid-template-rows: 40px 70px 40px</div>
+                <div class="gdemo-rows">
+                    <div class="g-cell">R1 · 40px</div>
+                    <div class="g-cell">C2</div>
+                    <div class="g-cell">C3</div>
+                    <div class="g-cell accent">R2 · 70px</div>
+                    <div class="g-cell">C2</div>
+                    <div class="g-cell">C3</div>
+                    <div class="g-cell">R3 · 40px</div>
+                    <div class="g-cell">C2</div>
+                    <div class="g-cell">C3</div>
+                </div>
+            </div>
+
+            <!-- GDEMO 3: grid-column + grid-row (posicionar) -->
+            <div class="gdemo-card">
+                <h3>grid-column · grid-row</h3>
+                <p class="demo-prop">Posicionar y expandir elementos</p>
+                <p><strong>grid-column: 1 / 3</strong> significa "desde línea 1 hasta línea 3". <strong>span 2</strong> es shorthand: "ocupa 2 celdas desde donde estoy".</p>
+                <div class="demo-dir-label" style="margin-bottom:5px">El elemento amarillo ocupa grid-column:3/5 y grid-row:2/4</div>
+                <div class="gdemo-position">
+                    <div class="g-cell">C1</div>
+                    <div class="g-cell gp-span-col">span 2 cols →</div>
+                    <div class="g-cell">C4</div>
+                    <div class="g-cell gp-span-row">span 2 filas ↓</div>
+                    <div class="g-cell">C2</div>
+                    <div class="g-cell accent gp-place">col:3/5 row:2/4</div>
+                    <div class="g-cell">C1</div>
+                    <div class="g-cell">C2</div>
+                </div>
+            </div>
+
+            <!-- GDEMO 4: auto-fill vs auto-fit -->
+            <div class="gdemo-card">
+                <h3>auto-fill · auto-fit · minmax()</h3>
+                <p class="demo-prop">Layouts responsivos sin media queries</p>
+                <p><strong>auto-fill</strong> crea columnas aunque estén vacías. <strong>auto-fit</strong> colapsa las vacías y estira las que tienen contenido. Ambas con <strong>minmax()</strong> dan responsividad automática.</p>
+                <div class="demo-dir-label" style="margin-bottom:5px">auto-fill: minmax(100px, 1fr) — crea columnas vacías</div>
+                <div class="gdemo-autofill">
+                    <div class="g-cell">Pelé</div>
+                    <div class="g-cell">Messi</div>
+                    <div class="g-cell">CR7</div>
+                </div>
+                <div class="demo-dir-label" style="margin:10px 0 5px">auto-fit: minmax(100px, 1fr) — las estira al máximo</div>
+                <div class="gdemo-autofit">
+                    <div class="g-cell accent">Pelé</div>
+                    <div class="g-cell accent">Messi</div>
+                    <div class="g-cell accent">CR7</div>
+                </div>
+            </div>
+
+            <!-- GDEMO 5: grid-template-areas — ocupa ancho completo -->
+            <div class="gdemo-card full">
+                <h3>grid-template-areas</h3>
+                <p class="demo-prop">Layout nombrado con zonas semánticas</p>
+                <p>La propiedad más poderosa de Grid. Permite nombrar zonas del layout visualmente en el CSS y asignar cada elemento a su área. El layout completo de GOAT·LIST usa esta técnica en el footer.</p>
+                <div class="demo-dir-label" style="margin-bottom:5px">
+                    Áreas: "header header header" / "sidebar main aside" / "footer footer footer"
+                </div>
+                <div class="gdemo-areas">
+                    <div class="g-cell accent ga-header">header · grid-area: header</div>
+                    <div class="g-cell ga-sidebar">sidebar</div>
+                    <div class="g-cell ga-main" style="background:rgba(207,160,76,0.3); color:var(--dorado)">main content</div>
+                    <div class="g-cell ga-aside">aside</div>
+                    <div class="g-cell accent ga-footer">footer · grid-area: footer</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CARRUSEL INFINITO — 8 TARJETAS
+         Auto-scroll continuo sin límite
+         ══════════════════════════════════════ -->
+    <section class="carrusel-seccion">
+        <div class="carrusel-header">
+            <span class="hero-etiqueta" style="margin-bottom:0">Carrusel · Las 8 Leyendas</span>
+            <p class="carrusel-hint">← Acerca el cursor a los bordes para navegar continuamente →</p>
+        </div>
+
+        <div class="carrusel-wrapper" id="carruselWrapper">
+
+            <!-- ZONA IZQUIERDA -->
+            <div class="zona-scroll zona-izquierda" id="zonaIzq">
+                <span class="zona-flecha">‹</span>
+            </div>
+
+            <!-- TRACK -->
+            <div class="carrusel-track" id="carruselTrack">
+
+                <article class="jugador-card carrusel-card">
+                    <div class="card-imagen pele-bg"><div class="card-overlay"></div></div>
+                    <div class="card-contenido">
+                        <div class="card-badge">Brasil</div>
+                        <h2 class="card-nombre">Pelé</h2>
+                        <p class="card-cargo">El Rey del Fútbol</p>
+                        <ul class="card-stats">
+                            <li><span class="stat-key">Goles</span><span class="stat-val">757</span></li>
+                            <li><span class="stat-key">Mundiales</span><span class="stat-val">3</span></li>
+                            <li><span class="stat-key">Balón de Oro</span><span class="stat-val">Honorífico FIFA</span></li>
+                        </ul>
+                        <p class="card-desc">El único tricampeón mundial de la historia.</p>
+                        <a href="https://es.wikipedia.org/wiki/Pel%C3%A9" target="_blank" class="card-link">Ver legado →</a>
+                    </div>
+                </article>
+
+                <article class="jugador-card carrusel-card">
+                    <div class="card-imagen maradona-bg"><div class="card-overlay"></div></div>
+                    <div class="card-contenido">
+                        <div class="card-badge">Argentina</div>
+                        <h2 class="card-nombre">Maradona</h2>
+                        <p class="card-cargo">El Dios del Fútbol</p>
+                        <ul class="card-stats">
+                            <li><span class="stat-key">Mundial</span><span class="stat-val">México 1986</span></li>
+                            <li><span class="stat-key">Serie A</span><span class="stat-val">2 con Nápoles</span></li>
+                            <li><span class="stat-key">Gol del Siglo</span><span class="stat-val">22 jun 1986</span></li>
+                        </ul>
+                        <p class="card-desc">El gol del siglo y la mano de Dios. Genio irrepetible.</p>
+                        <a href="https://es.wikipedia.org/wiki/Diego_Maradona" target="_blank" class="card-link">Ver legado →</a>
+                    </div>
+                </article>
+
+                <article class="jugador-card carrusel-card">
+                    <div class="card-imagen messi-bg"><div class="card-overlay"></div></div>
+                    <div class="card-contenido">
+                        <div class="card-badge">Argentina</div>
+                        <h2 class="card-nombre">Messi</h2>
+                        <p class="card-cargo">La Pulga Atómica</p>
+                        <ul class="card-stats">
+                            <li><span class="stat-key">Balones de Oro</span><span class="stat-val">8 récord</span></li>
+                            <li><span class="stat-key">Mundial</span><span class="stat-val">Qatar 2022</span></li>
+                            <li><span class="stat-key">Goles Barça</span><span class="stat-val">672</span></li>
+                        </ul>
+                        <p class="card-desc">La estadística más completa de la historia.</p>
+                        <a href="https://es.wikipedia.org/wiki/Lionel_Messi" target="_blank" class="card-link">Ver legado →</a>
+                    </div>
+                </article>
+
+                <article class="jugador-card carrusel-card">
+                    <div class="card-imagen cristiano-bg"><div class="card-overlay"></div></div>
+                    <div class="card-contenido">
+                        <div class="card-badge">Portugal</div>
+                        <h2 class="card-nombre">Cristiano</h2>
+                        <p class="card-cargo">CR7 · La Máquina</p>
+                        <ul class="card-stats">
+                            <li><span class="stat-key">Balones de Oro</span><span class="stat-val">5</span></li>
+                            <li><span class="stat-key">Champions</span><span class="stat-val">5 títulos</span></li>
+                            <li><span class="stat-key">Goles totales</span><span class="stat-val">900+</span></li>
+                        </ul>
+                        <p class="card-desc">El goleador más prolífico de todos los tiempos.</p>
+                        <a href="https://es.wikipedia.org/wiki/Cristiano_Ronaldo" target="_blank" class="card-link">Ver legado →</a>
+                    </div>
+                </article>
+
+                <article class="jugador-card carrusel-card">
+                    <div class="card-imagen cruyff-bg"><div class="card-overlay"></div></div>
+                    <div class="card-contenido">
+                        <div class="card-badge">Países Bajos</div>
+                        <h2 class="card-nombre">Cruyff</h2>
+                        <p class="card-cargo">El Salvador del Fútbol</p>
+                        <ul class="card-stats">
+                            <li><span class="stat-key">Balones de Oro</span><span class="stat-val">3 (71, 73, 74)</span></li>
+                            <li><span class="stat-key">Champions Ajax</span><span class="stat-val">3 seguidas</span></li>
+                            <li><span class="stat-key">Títulos DT Barça</span><span class="stat-val">4 Ligas, 1 UCL</span></li>
+                        </ul>
+                        <p class="card-desc">Inventor del fútbol total. Padre del modelo Barcelona.</p>
+                        <a href="https://es.wikipedia.org/wiki/Johan_Cruyff" target="_blank" class="card-link">Ver legado →</a>
+                    </div>
+                </article>
+
+                <article class="jugador-card carrusel-card">
+                    <div class="card-imagen ronaldinho-bg"><div class="card-overlay"></div></div>
+                    <div class="card-contenido">
+                        <div class="card-badge">Brasil</div>
+                        <h2 class="card-nombre">Ronaldinho</h2>
+                        <p class="card-cargo">El Mago del Balón</p>
+                        <ul class="card-stats">
+                            <li><span class="stat-key">Balones de Oro</span><span class="stat-val">2 (04, 05)</span></li>
+                            <li><span class="stat-key">Champions</span><span class="stat-val">Barcelona 2006</span></li>
+                            <li><span class="stat-key">Copa del Mundo</span><span class="stat-val">2002 Brasil</span></li>
+                        </ul>
+                        <p class="card-desc">El jugador más desequilibrante de los 2000.</p>
+                        <a href="https://es.wikipedia.org/wiki/Ronaldinho" target="_blank" class="card-link">Ver legado →</a>
+                    </div>
+                </article>
+
+                <article class="jugador-card carrusel-card">
+                    <div class="card-imagen r9-bg"><div class="card-overlay"></div></div>
+                    <div class="card-contenido">
+                        <div class="card-badge">Brasil</div>
+                        <h2 class="card-nombre">R9 Ronaldo</h2>
+                        <p class="card-cargo">El Fenómeno</p>
+                        <ul class="card-stats">
+                            <li><span class="stat-key">Balones de Oro</span><span class="stat-val">2 (97, 02)</span></li>
+                            <li><span class="stat-key">Mundiales</span><span class="stat-val">2 (94, 2002)</span></li>
+                            <li><span class="stat-key">Goles Mundiales</span><span class="stat-val">15 (récord)</span></li>
+                        </ul>
+                        <p class="card-desc">El delantero más completo de todos los tiempos.</p>
+                        <a href="https://es.wikipedia.org/wiki/Ronaldo_Naz%C3%A1rio" target="_blank" class="card-link">Ver legado →</a>
+                    </div>
+                </article>
+
+                <article class="jugador-card carrusel-card">
+                    <div class="card-imagen zidane-bg"><div class="card-overlay"></div></div>
+                    <div class="card-contenido">
+                        <div class="card-badge">Francia</div>
+                        <h2 class="card-nombre">Zidane</h2>
+                        <p class="card-cargo">El Maestro Elegante</p>
+                        <ul class="card-stats">
+                            <li><span class="stat-key">Balón de Oro</span><span class="stat-val">1998</span></li>
+                            <li><span class="stat-key">Copa del Mundo</span><span class="stat-val">Francia 1998</span></li>
+                            <li><span class="stat-key">Champions DT</span><span class="stat-val">3 seguidas Madrid</span></li>
+                        </ul>
+                        <p class="card-desc">Elegancia y poder. Campeón como jugador y entrenador.</p>
+                        <a href="https://es.wikipedia.org/wiki/Zinedine_Zidane" target="_blank" class="card-link">Ver legado →</a>
+                    </div>
+                </article>
+
+            </div><!-- fin track -->
+
+            <!-- ZONA DERECHA -->
+            <div class="zona-scroll zona-derecha" id="zonaDer">
+                <span class="zona-flecha">›</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-pro">
+        <div class="footer-grid">
+            <div class="footer-col footer-marca">
+                <div class="footer-logo">GOAT<span>·LIST</span></div>
+                <p class="footer-slogan">El archivo definitivo del fútbol de élite. Datos, historia y legado curados por expertos.</p>
+            </div>
             <div class="footer-col">
                 <h4 class="footer-titulo-col">Explorar</h4>
                 <ul class="footer-links">
@@ -152,7 +696,6 @@
                     <li><a href="#">Balón de Oro — El archivo</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h4 class="footer-titulo-col">Fuentes</h4>
                 <ul class="footer-links">
@@ -162,24 +705,124 @@
                     <li><a href="https://fbref.com" target="_blank">FBref — Estadísticas</a></li>
                 </ul>
             </div>
-
         </div>
-
         <div class="footer-divisor"></div>
-
         <div class="footer-bottom">
             <p class="footer-copyright">
                 © 2026 GOAT·LIST LLC — Todos los derechos reservados.<br>
-                Este proyecto se presenta únicamente con fines educativos. Los nombres, 
-                marcas y estadísticas son propiedad de sus respectivos titulares.
+                Este proyecto se presenta únicamente con fines educativos.
             </p>
             <p class="footer-creditos">
                 Diseñado &amp; desarrollado en <strong>Barranquilla, Colombia</strong><br>
                 Proyecto académico Riwi por <strong>Camilo Meza</strong>
             </p>
         </div>
-
     </footer>
+
+    <!-- ══════════════════════════════════════
+         JAVASCRIPT — CARRUSEL INFINITO SIN SALTOS
+         Técnica: clonación de nodos del DOM
+         ─────────────────────────────────────────
+         CÓMO FUNCIONA:
+         1. Se duplican todas las tarjetas al inicio y al final del track.
+         2. El scroll arranca posicionado en el inicio del bloque ORIGINAL
+            (no en el clon), de modo que hay contenido antes y después.
+         3. Cuando el scroll entra en la zona de clones finales, se reubica
+            silenciosamente al bloque original equivalente — misma posición
+            visual, distinto scrollLeft. El ojo humano no detecta nada.
+         4. El reset nunca ocurre en el mismo frame que el movimiento,
+            así que no hay micro-salto perceptible.
+         ══════════════════════════════════════ -->
+    <script>
+        (function() {
+
+            var track   = document.getElementById('carruselTrack');
+            var zonaIzq = document.getElementById('zonaIzq');
+            var zonaDer = document.getElementById('zonaDer');
+            var intervalo = null;
+            var VEL = 2; /* píxeles por frame — ajustar si se quiere más velocidad */
+
+            /* ── PASO 1: Clonar todas las tarjetas del track ──
+               Guardamos los nodos originales ANTES de clonar */
+            var originales = Array.prototype.slice.call(track.children);
+            var totalOriginales = originales.length;
+
+            /* Clonar al FINAL del track (para scroll hacia la derecha) */
+            originales.forEach(function(nodo) {
+                track.appendChild(nodo.cloneNode(true));
+            });
+
+            /* Clonar al INICIO del track (para scroll hacia la izquierda) */
+            originales.slice().reverse().forEach(function(nodo) {
+                track.insertBefore(nodo.cloneNode(true), track.firstChild);
+            });
+
+            /* ── PASO 2: Calcular el ancho de un bloque completo ──
+               Es el ancho total de todos los nodos originales + sus gaps.
+               Se calcula una vez al init y se recalcula si la ventana cambia. */
+            var anchoBloque = 0;
+
+            function calcularAnchoBloque() {
+                /* Tomamos los nodos que corresponden al bloque original.
+                   Están en el centro: desde índice totalOriginales
+                   hasta totalOriginales * 2 - 1 */
+                var nodos = track.children;
+                var inicio = nodos[totalOriginales];
+                var fin    = nodos[totalOriginales * 2 - 1];
+
+                if (!inicio || !fin) return;
+
+                /* offsetLeft del fin + offsetWidth del fin - offsetLeft del inicio */
+                anchoBloque = (fin.offsetLeft + fin.offsetWidth) - inicio.offsetLeft;
+            }
+
+            calcularAnchoBloque();
+            window.addEventListener('resize', calcularAnchoBloque);
+
+            /* ── PASO 3: Posicionar el scroll en el bloque ORIGINAL al inicio ──
+               Si empezáramos en 0, estaríamos en los clones del inicio y
+               el usuario no podría ir más a la izquierda. */
+            track.scrollLeft = anchoBloque;
+
+            /* ── PASO 4: Función de normalización (el núcleo del truco) ──
+               Se ejecuta en cada frame. Si el scroll se sale del rango
+               del bloque original, lo reubica al equivalente sin animación. */
+            function normalizarScroll() {
+                /* Rango válido: [anchoBloque, anchoBloque * 2) */
+                if (track.scrollLeft >= anchoBloque * 2) {
+                    /* Entró en los clones finales → volver al original */
+                    track.scrollLeft -= anchoBloque;
+                } else if (track.scrollLeft < anchoBloque) {
+                    /* Entró en los clones iniciales → ir al original */
+                    track.scrollLeft += anchoBloque;
+                }
+            }
+
+            /* ── PASO 5: Loop de animación ──
+               requestAnimationFrame da 60fps garantizados y es más
+               eficiente que setInterval para animaciones visuales. */
+            function iniciar(dir) {
+                if (intervalo !== null) return;
+
+                intervalo = setInterval(function() {
+                    track.scrollLeft += VEL * dir;
+                    normalizarScroll();
+                }, 16);
+            }
+
+            function detener() {
+                clearInterval(intervalo);
+                intervalo = null;
+            }
+
+            /* Zonas sensibles de scroll */
+            zonaIzq.addEventListener('mouseenter', function() { iniciar(-1); });
+            zonaIzq.addEventListener('mouseleave', detener);
+            zonaDer.addEventListener('mouseenter', function() { iniciar(1); });
+            zonaDer.addEventListener('mouseleave', detener);
+
+        })(); /* IIFE: encapsula todas las variables, sin contaminar el scope global */
+    </script>
 
 </body>
 </html>
