@@ -12,8 +12,6 @@ Año: 2026
 
 El proyecto presenta las **8 leyendas del fútbol mundial** mediante un layout completamente construido con Flexbox y Grid, funcionando como **demostración visual interactiva** de cada propiedad CSS.
 
-**Nivel de producción:** Apple Standard — código sin una línea innecesaria, totalmente funcional, semánticamente correcto.
-
 ---
 
 ## 🎯 Características Principales
