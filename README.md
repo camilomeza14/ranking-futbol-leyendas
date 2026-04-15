@@ -1,6 +1,6 @@
 # GOAT·LIST — CSS Flexbox & Grid en Producción Real
 
-**Proyecto de Demostración Web**  
+**Proyecto de Pagina Web**  
 Autor: Camilo Meza  
 Año: 2026
 
