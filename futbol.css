@@ -1,6 +1,12 @@
-/* =============================================================================
-   1. RESET, TIPOGRAFÍA Y VARIABLES GLOBALES
-   ============================================================================= */
+/* ============================================================================
+   GOAT·LIST — futbol.css
+   CSS World-Class: Flexbox + Grid Layout demostrados en producción real
+   Proyecto académico Riwi · Camilo Meza · 2026
+   ============================================================================ */
+
+/* ============================================================================
+   1. RESET & VARIABLES GLOBALES
+   ============================================================================ */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -8,50 +14,106 @@
 }
 
 :root {
-    /* Paleta de colores Premium */
-    --negro-absoluto: #040404;   /* Negro corporativo profundo */
-    --negro-suave:    #0e0e0e;   /* Fondo secundario */
-    --gris-fondo:     #1a1a1a;   /* Tarjetas */
-    --blanco-premium: #fcfaf5;   /* Blanco cálido editorial */
-    --gris-texto:     #acacac;   /* Texto secundario */
-    --dorado:         #cfa04c;   /* Accent color */
-    --dorado-brillante: #f0c97d; /* Hover accent */
-    --linea:          #2c2c2c;   /* Divisores discretos */
-
-    /* Tipografía Profesional */
-    --serif: 'Cormorant Garamond', Georgia, serif; /* Editorial y elegante */
-    --sans:  'Outfit', sans-serif;                /* Moderna y legible */
-
-    /* Espaciado base y fluidez */
-    --gap: 1.5rem;
-    --border-radius: 4px; /* Minimalista y limpio */
+    --negro:        #040404;
+    --negro-suave:  #0e0e0e;
+    --gris-fondo:   #1a1a1a;
+    --blanco:       #fcfaf5;
+    --gris-texto:   #acacac;
+    --dorado:       #cfa04c;
+    --dorado-bright:#f0c97d;
+    --linea:        #2c2c2c;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans:  'Outfit', sans-serif;
+    --radius: 4px;
 }
 
-/* =============================================================================
-   2. ESTILOS DE BODY
-   ============================================================================= */
 body {
-    background-color: var(--negro-absoluto);
-    color: var(--blanco-premium);
+    background-color: var(--negro);
+    color: var(--blanco);
     font-family: var(--sans);
     font-weight: 300;
-    line-height: 1.75; /* Legibilidad profesional */
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
 
-/* =============================================================================
-   3. HERO: ENCABEZADO EDITORIAL
-   ============================================================================= */
+/* ============================================================================
+   2. TOP BAR
+   FLEXBOX DEMO 1 — display:flex + justify-content:space-between + align-items
+   El eje principal (→) distribuye logo e izq/der. El eje cruzado (↓) centra.
+   ============================================================================ */
+.top-bar {
+    /* ── FLEXBOX: display:flex activa el contenedor flex ── */
+    display: flex;
+
+    /* ── justify-content: distribuye hijos en el eje PRINCIPAL (horizontal) ── */
+    justify-content: space-between;
+
+    /* ── align-items: alinea hijos en el eje CRUZADO (vertical) ── */
+    align-items: center;
+
+    background-color: var(--negro-suave);
+    border-bottom: 1px solid var(--linea);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+
+.top-bar-info {
+    font-size: 0.75rem;
+    color: var(--gris-texto);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* ============================================================================
+   3. BOTÓN DE NAVEGACIÓN GLOBAL
+   ============================================================================ */
+.btn-navegacion {
+    background-color: var(--dorado);
+    color: var(--negro);
+    padding: 0.55rem 1.3rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.72rem;
+    border-radius: var(--radius);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    /* ── FLEXBOX: inline flex para centrar texto interno ── */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.btn-navegacion:hover {
+    background-color: var(--dorado-bright);
+    transform: translateY(-2px);
+}
+
+/* ============================================================================
+   4. HERO — ENCABEZADO EDITORIAL
+   FLEXBOX DEMO 2 — flex-direction:column (eje principal = vertical)
+   ============================================================================ */
 .hero {
-    max-width: 820px;
+    /* ── FLEXBOX: column cambia el eje principal a vertical (↓) ── */
+    display: flex;
+    flex-direction: column;
+
+    /* ── align-items centra los hijos en el eje cruzado (horizontal aquí) ── */
+    align-items: center;
+
+    /* ── justify-content centra en el eje principal (vertical aquí) ── */
+    justify-content: center;
+
+    max-width: 860px;
     margin: 0 auto;
     padding: clamp(4rem, 10vw, 8rem) 2rem clamp(3rem, 8vw, 6rem);
     text-align: center;
-    position: relative;
 }
 
-/* Etiqueta de categoría (BEM: .hero__badge) */
 .hero-etiqueta {
     display: inline-block;
     font-size: 0.7rem;
@@ -65,161 +127,139 @@ body {
     border-radius: 2px;
 }
 
-/* Título principal con serif (BEM: .hero__title) */
 .hero-titulo {
     font-family: var(--serif);
-    font-size: clamp(3rem, 7vw, 6rem); /* Tipografía fluida */
+    font-size: clamp(3rem, 7vw, 6rem);
     font-weight: 700;
     line-height: 1.05;
-    color: var(--blanco-premium);
+    color: var(--blanco);
     margin-bottom: 2rem;
     letter-spacing: -1px;
 }
-
-/* Itálica accent (BEM: .hero__title--italic) */
 .hero-titulo em {
     font-style: italic;
     color: var(--dorado);
     font-weight: 600;
 }
 
-/* Descripción secundaria (BEM: .hero__description) */
 .hero-descripcion {
-    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
     color: var(--gris-texto);
-    max-width: 580px;
-    margin: 0 auto 3rem;
+    max-width: 600px;
+    margin-bottom: 3rem;
     font-weight: 300;
 }
 
-/* Línea decorativa minimalista */
 .hero-linea {
     width: 60px;
-    height: 1px; /* Más fina y elegante */
+    height: 1px;
     background: linear-gradient(90deg, transparent, var(--dorado), transparent);
-    margin: 0 auto;
 }
 
-/* =============================================================================
-   4. SECCIÓN GALERÍA DE LEYENDAS
-   ============================================================================= */
+/* ============================================================================
+   5. SECCIÓN PRINCIPAL — 8 TARJETAS CON CSS GRID
+   GRID DEMO 1 — Layout completo de 8 jugadores
+   Usa: grid-template-columns, fr, gap, repeat, auto-fit, minmax
+   ============================================================================ */
 .galeria-seccion {
-    padding: 0 2rem 8rem;
-    max-width: 1360px; /* Un poco más ancho */
+    padding: 0 2rem 6rem;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
-/* Grid de 4 columnas (BEM: .galeria__grid) */
+/* ── TÍTULO DE SECCIÓN ── */
+.seccion-titulo {
+    /* FLEXBOX DEMO 3: flex-direction:row (por defecto, explícito aquí) */
+    display: flex;
+    flex-direction: row;           /* eje principal = horizontal */
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--linea);
+}
+.seccion-titulo h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--blanco);
+}
+.seccion-numero {
+    font-family: var(--serif);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--linea);
+    line-height: 1;
+    /* FLEXBOX: order — empuja el número al final visualmente */
+    order: 2;
+}
+.seccion-titulo h2 { order: 1; }
+.seccion-etiqueta { order: 3; }
+
+/* ── CSS GRID PRINCIPAL — 8 TARJETAS ──
+   grid-template-columns: repeat(auto-fit, minmax()) crea layout que se
+   ajusta automáticamente al ancho de pantalla (responsivo sin media queries)
+   La unidad fr (fracción) distribuye el espacio disponible equitativamente. */
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem; /* Más espacio entre tarjetas */
+
+    /* auto-fit + minmax: si caben 4 de 280px, muestra 4; si no, baja a 2 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    /* gap = grid-gap: espacio entre filas Y columnas a la vez */
+    gap: 2rem;
+
     align-items: start;
 }
 
-/* =============================================================================
-   5. TARJETA DE JUGADOR (BEM: .player-card)
-   ============================================================================= */
+/* ============================================================================
+   6. TARJETA DE JUGADOR
+   FLEXBOX DEMO 4 — columna interna: imagen arriba, contenido abajo
+   ============================================================================ */
 .jugador-card {
-    background-color: var(--negro-suave);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    border: 1px solid var(--gris-fondo); /* Borde discreto */
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
+    /* ── FLEXBOX: organiza imagen y contenido en columna ── */
+    display: flex;
+    flex-direction: column;
 
-/* Interacción hover de clase mundial (levantamiento y sombra profunda) */
+    background-color: var(--negro-suave);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--gris-fondo);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 .jugador-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 30px 70px rgba(0,0,0,0.6), 0 0 0 1px var(--dorado);
 }
 
-/* --- Area de Imagen Superior (BEM: .player-card__image-container) --- */
+/* Imagen */
 .card-imagen {
-    height: 190px;
+    height: 200px;
     position: relative;
-    display: flex;
-    align-items: flex-end;
     overflow: hidden;
+    /* flex-shrink:0 — la imagen NO se encoge aunque el card sea pequeño */
+    flex-shrink: 0;
 }
-
-/* Overlay degradado integrado (BEM: .player-card__overlay) */
 .card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 70%);
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 65%);
     z-index: 1;
 }
+.card-numero { display: none; }
 
-/* =============================================================================
-   NÚMERO DE RANKING (OCULTO)
-   He eliminado los caracteres sobrantes que causaban el error de sintaxis.
-   ============================================================================= */
-
-.card-numero {
-    display: none; /* Mantiene el número oculto para un diseño más limpio */
-}
-
-/* También puedes borrar o comentar el efecto hover de abajo, 
-   ya que al estar oculto el número, no se verá ninguna animación. */
-.jugador-card:hover .card-numero {
-    opacity: 0;
-}
-
-/* El número se ilumina totalmente al pasar el mouse por la tarjeta */
-.jugador-card:hover .card-numero {
-    opacity: 1;
-    transform: scale(1.05); /* Un pequeño pulso de crecimiento profesional */
-}
-
-/* Efecto hover profesional: El número se ilumina cuando pasas el mouse por la tarjeta */
-.jugador-card:hover .card-numero {
-    opacity: 1; /* Al 100% de visibilidad en hover */
-}
-
-/* =============================================================================
-   6. FONDOS CONCEPTUALES AVANZADOS (Sustituyen imágenes externas)
-   ═════════════════════════════════════════════════════════════════════════════
-   CAMILO: Para usar imágenes reales en producción, cambia el 'background' de
-   cada clase por:
-   background: url('./ruta/a/tu/imagen.jpg') center/cover no-repeat;
-   ═════════════════════════════════════════════════════════════════════════════ */
-
-/* Fondos conceptuales CSS */
-/* Busca estas clases en tu archivo futbol.css y reemplázalas */
-
-.pele-bg {
-    background: url('pele.jpg') center/cover no-repeat;
-}
-
-.maradona-bg {
-    background: url('maradona.jpg') no-repeat;
-    background-size: cover;
-    /* Bajamos un poco más (10%) para enfocar su cara */
-    background-position: center 10%; 
-}
-
-.messi-bg {
-    background: url('messi.jpg') no-repeat;
-    background-size: cover;
-    /* ¡Aquí está el truco para Messi! Apuntamos al 5% superior (muy arriba) */
-    /* para forzar que su cara entre en el encuadre bajo. */
-    background-position: center 5%; 
-}
-
-.cristiano-bg {
-    background: url('cristiano.jpg') no-repeat;
-    background-size: cover;
-    /* Para Cristiano, un 10% superior debería centrar su expresión. */
-    background-position: center 10%; 
-}
-
-/* --- Area de Contenido Inferior (BEM: .player-card__content) --- */
+/* Contenido — flex-grow:1 para que ocupe todo el espacio vertical restante */
 .card-contenido {
-    padding: 1.5rem; /* Más espaciado */
+    /* ── FLEXBOX DEMO 5: flex-grow:1 = ocupa TODO el espacio sobrante ── */
+    flex-grow: 1;
+
+    /* ── flex-direction:column para apilar badge, nombre, stats, link ── */
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
 }
 
-/* Badge de país (BEM: .player-card__badge) */
 .card-badge {
     display: inline-block;
     font-size: 0.65rem;
@@ -229,20 +269,16 @@ body {
     color: var(--dorado);
     margin-bottom: 0.6rem;
 }
-
-/* Nombre (BEM: .player-card__name) */
 .card-nombre {
     font-family: var(--serif);
-    font-size: 1.9rem; /* Un poco más grande */
+    font-size: 1.9rem;
     font-weight: 700;
-    color: var(--blanco-premium);
+    color: var(--blanco);
     line-height: 1.1;
     margin-bottom: 0.3rem;
 }
-
-/* Nickname (BEM: .player-card__nickname) */
 .card-cargo {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--gris-texto);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -250,49 +286,53 @@ body {
     margin-bottom: 1.2rem;
 }
 
-/* Lista de estadísticas premium (BEM: .player-card__stats) */
+/* Stats */
 .card-stats {
     list-style: none;
     border-top: 1px solid var(--gris-fondo);
     border-bottom: 1px solid var(--gris-fondo);
-    padding: 1rem 0; /* Más espaciado */
+    padding: 1rem 0;
     margin-bottom: 1.2rem;
+
+    /* FLEXBOX DEMO 6: columna con gap entre stats */
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-
 .card-stats li {
+    /* FLEXBOX DEMO 7: space-between en eje principal */
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: 0.5rem;
 }
-
 .stat-key {
     font-size: 0.7rem;
     color: var(--gris-texto);
     font-weight: 400;
-    flex-shrink: 0;
+    flex-shrink: 0;     /* la etiqueta no se encoge */
 }
-
 .stat-val {
     font-size: 0.78rem;
-    color: var(--blanco-premium);
+    color: var(--blanco);
     font-weight: 500;
     text-align: right;
+    /* flex-grow:1 — empuja el valor hasta el extremo derecho */
+    flex-grow: 1;
 }
 
-/* Descripción (BEM: .player-card__description) */
 .card-desc {
-    font-size: 0.85rem; /* Mejor legibilidad */
+    font-size: 0.85rem;
     color: var(--gris-texto);
     line-height: 1.7;
     margin-bottom: 1.5rem;
     font-weight: 300;
+
+    /* flex-grow:1 — empuja el link al fondo de la tarjeta */
+    flex-grow: 1;
 }
 
-/* Enlace (BEM: .player-card__link) */
+/* Link al final */
 .card-link {
     display: inline-block;
     font-size: 0.7rem;
@@ -303,59 +343,509 @@ body {
     text-decoration: none;
     position: relative;
     padding-bottom: 2px;
+    /* align-self:flex-start — el link no se estira al ancho completo */
+    align-self: flex-start;
+    margin-top: auto;   /* empuja al fondo */
 }
-
-/* Efecto hover minimalista de clase mundial */
 .card-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--dorado-brillante);
+    bottom: 0; left: 0;
+    width: 0; height: 1px;
+    background-color: var(--dorado-bright);
     transition: width 0.3s ease;
 }
+.card-link:hover { color: var(--dorado-bright); }
+.card-link:hover::after { width: 100%; }
 
-.card-link:hover {
-    color: var(--dorado-brillante);
+/* ============================================================================
+   FONDOS DE IMAGEN — Los 8 jugadores
+   ============================================================================ */
+.pele-bg       { background: url('pele.jpg')      center 10%/cover no-repeat; }
+.maradona-bg   { background: url('maradona.jpg')  center 10%/cover no-repeat; }
+.messi-bg      { background: url('messi.jpg')     center 5%/cover  no-repeat; }
+.cristiano-bg  { background: url('cristiano.jpg') center 10%/cover no-repeat; }
+.cruyff-bg     { background: url('cruyff.jpg')    center 10%/cover no-repeat; }
+.ronaldinho-bg { background: url('ronaldinho.jpg') center 10%/cover no-repeat; }
+.r9-bg         { background: url('ronaldo.jpg')         center 10%/cover no-repeat; }
+.zidane-bg     { background: url('zidane.jpg')     center 10%/cover no-repeat; }
+
+/* ============================================================================
+   7. SECCIÓN FLEXBOX SHOWCASE
+   GRID DEMO 2 — grid-template-areas + grid-template-rows + grid-column/row
+   Muestra visualmente los conceptos de Flexbox en la página
+   ============================================================================ */
+.flex-showcase {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
 }
 
-.card-link:hover::after {
-    width: 100%;
+.flex-showcase-titulo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--linea);
+}
+.flex-showcase-titulo h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--blanco);
+}
+.showcase-tag {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--dorado);
+    border: 1px solid var(--dorado);
+    padding: 3px 10px;
+    border-radius: 2px;
 }
 
-/* =============================================================================
-   7. FOOTER CLASE MUNDIAL PROFESIONAL
-   ============================================================================= */
+/* ── GRID DE DEMOS FLEXBOX ──
+   grid-template-areas nombra zonas del layout visual
+   grid-template-columns + grid-template-rows definen la rejilla */
+.flex-demos-grid {
+    display: grid;
+
+    /* grid-template-columns: define explícitamente cada columna */
+    grid-template-columns: 1fr 1fr 1fr;
+
+    /* grid-template-rows: filas con altura automática */
+    grid-template-rows: auto auto auto;
+
+    /* grid-gap: shorthand para row-gap y column-gap */
+    gap: 1.5rem;
+
+    /* grid-template-areas: nombra zonas del layout */
+    grid-template-areas:
+        "direcciones   justify        align"
+        "wrap          order-grow     basis-shrink"
+        "self-content  self-content   self-content";
+}
+
+/* Cada celda del grid usa grid-area para ubicarse */
+.demo-direcciones  { grid-area: direcciones; }
+.demo-justify      { grid-area: justify; }
+.demo-align        { grid-area: align; }
+.demo-wrap         { grid-area: wrap; }
+.demo-order-grow   { grid-area: order-grow; }
+.demo-basis-shrink { grid-area: basis-shrink; }
+.demo-self-content {
+    grid-area: self-content;
+    /* grid-column: span 3 — ocupa las 3 columnas del grid */
+    grid-column: 1 / -1;
+}
+
+/* Tarjeta base para cada demo */
+.demo-card {
+    background-color: var(--negro-suave);
+    border: 1px solid var(--linea);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    overflow: hidden;
+}
+.demo-card h3 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--blanco);
+    margin-bottom: 0.3rem;
+}
+.demo-card .demo-prop {
+    font-size: 0.65rem;
+    color: var(--dorado);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+.demo-card p {
+    font-size: 0.78rem;
+    color: var(--gris-texto);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* ── Área visual de cada demo ── */
+.demo-area {
+    background-color: rgba(255,255,255,0.03);
+    border: 1px solid var(--linea);
+    border-radius: 3px;
+    padding: 0.8rem;
+    min-height: 80px;
+}
+
+/* Items de demo compartidos */
+.demo-item {
+    background-color: var(--dorado);
+    color: var(--negro);
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+    font-family: var(--sans);
+}
+.demo-item.dim {
+    background-color: rgba(207,160,76,0.25);
+    color: var(--dorado);
+}
+
+/* --- DEMO: flex-direction variantes --- */
+.demo-row {
+    display: flex;
+    flex-direction: row;       /* eje principal: horizontal → */
+    gap: 6px;
+    margin-bottom: 6px;
+}
+.demo-row-rev {
+    display: flex;
+    flex-direction: row-reverse;   /* horizontal ← */
+    gap: 6px;
+    margin-bottom: 6px;
+}
+.demo-col {
+    display: flex;
+    flex-direction: column;         /* eje principal: vertical ↓ */
+    gap: 4px;
+    margin-bottom: 6px;
+}
+.demo-col-rev {
+    display: flex;
+    flex-direction: column-reverse; /* vertical ↑ */
+    gap: 4px;
+}
+.demo-dir-label {
+    font-size: 0.58rem;
+    color: var(--gris-texto);
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}
+
+/* --- DEMO: justify-content --- */
+.demo-jc-start {
+    display: flex; justify-content: flex-start;
+    gap: 4px; margin-bottom: 5px;
+}
+.demo-jc-center {
+    display: flex; justify-content: center;
+    gap: 4px; margin-bottom: 5px;
+}
+.demo-jc-end {
+    display: flex; justify-content: flex-end;
+    gap: 4px; margin-bottom: 5px;
+}
+.demo-jc-between {
+    display: flex; justify-content: space-between;
+    margin-bottom: 5px;
+}
+.demo-jc-around {
+    display: flex; justify-content: space-around;
+}
+
+/* --- DEMO: align-items --- */
+.demo-ai {
+    display: flex;
+    align-items: var(--ai, center);
+    gap: 6px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--linea);
+    border-radius: 2px;
+    padding: 6px;
+    margin-bottom: 5px;
+    min-height: 56px;
+}
+.demo-item-tall {
+    background: rgba(207,160,76,0.25);
+    color: var(--dorado);
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 12px 8px;
+    border-radius: 2px;
+}
+
+/* --- DEMO: flex-wrap --- */
+.demo-wrap-box {
+    display: flex;
+    flex-wrap: var(--fw, wrap);
+    gap: 5px;
+    min-height: 60px;
+    margin-bottom: 5px;
+    /* Garantiza suficiente altura para mostrar múltiples líneas de wrap */
+    border: 1px solid rgba(207,160,76,0.15);
+    border-radius: 2px;
+    padding: 4px;
+    background: rgba(255,255,255,0.01);
+}
+.demo-item-sm {
+    /* Estilo optimizado para máxima legibilidad en demos */
+    flex-shrink: 0;
+    background: var(--dorado);
+    color: var(--negro);
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 5px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+    font-family: var(--sans);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- DEMO: order + flex-grow --- */
+.demo-order-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+.o1 { order: 1; }
+.o2 { order: 2; }
+.o3 { order: 3; }
+.grow1 { flex-grow: 1; }
+.grow2 { flex-grow: 2; }
+.grow3 { flex-grow: 3; }
+
+/* --- DEMO: flex-basis + flex-shrink --- */
+.demo-basis-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 6px;
+    overflow: hidden;
+}
+.b200  { flex-basis: 200px; flex-shrink: 0; }  /* no encoge */
+.b100  { flex-basis: 100px; flex-shrink: 1; }  /* encoge x1 */
+.b100s2{ flex-basis: 100px; flex-shrink: 2; }  /* encoge x2 */
+
+/* --- DEMO: align-self + align-content --- */
+.demo-self-row {
+    display: flex;
+    align-items: stretch;      /* base para comparar */
+    gap: 8px;
+    min-height: 80px;
+    margin-bottom: 8px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--linea);
+    border-radius: 2px;
+    padding: 6px;
+}
+.as-start   { align-self: flex-start; }
+.as-center  { align-self: center; }
+.as-end     { align-self: flex-end; }
+.as-stretch { align-self: stretch; }
+
+.demo-ac-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: var(--ac, flex-start);
+    gap: 4px;
+    /* Altura fija para ver claramente el espacio entre líneas con space-between */
+    min-height: 100px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--linea);
+    border-radius: 2px;
+    padding: 6px;
+    /* overflow visible para ver distribución clara */
+    overflow: visible;
+}
+
+/* ============================================================================
+   8. SECCIÓN CSS GRID SHOWCASE
+   GRID DEMO 3 — Demostración visual de todas las propiedades Grid
+   ============================================================================ */
+.grid-showcase {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+}
+
+.grid-showcase-titulo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--linea);
+}
+.grid-showcase-titulo h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--blanco);
+}
+
+/* Rejilla maestra de demos Grid */
+.grid-demos-outer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Demo card igual que flexbox */
+.gdemo-card {
+    background-color: var(--negro-suave);
+    border: 1px solid var(--linea);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    overflow: hidden;
+}
+.gdemo-card.full {
+    /* grid-column: ocupa ambas columnas */
+    grid-column: 1 / -1;
+}
+.gdemo-card h3 {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--blanco);
+    margin-bottom: 0.3rem;
+}
+.gdemo-card .demo-prop {
+    font-size: 0.65rem;
+    color: var(--dorado);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+.gdemo-card p {
+    font-size: 0.78rem;
+    color: var(--gris-texto);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Celda base del grid demo */
+.g-cell {
+    background-color: rgba(207,160,76,0.15);
+    color: var(--dorado);
+    font-size: 0.62rem;
+    font-weight: 600;
+    border: 1px solid rgba(207,160,76,0.3);
+    border-radius: 2px;
+    padding: 8px 6px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.g-cell.accent {
+    background-color: var(--dorado);
+    color: var(--negro);
+}
+
+/* ── DEMO 1: grid-template-columns + fr + gap ── */
+.gdemo-cols {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;  /* fracciones */
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.gdemo-cols-eq {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* repeat: 4 columnas iguales */
+    gap: 8px;
+}
+
+/* ── DEMO 2: grid-template-rows ── */
+.gdemo-rows {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 40px 70px 40px; /* filas con alturas distintas */
+    gap: 8px;
+}
+
+/* ── DEMO 3: grid-column + grid-row (posicionar elementos) ── */
+.gdemo-position {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 50px);
+    gap: 8px;
+}
+.gp-span-col {
+    /* grid-column: span 2 — ocupa 2 columnas */
+    grid-column: span 2;
+}
+.gp-span-row {
+    /* grid-row: span 2 — ocupa 2 filas */
+    grid-row: span 2;
+}
+.gp-place {
+    /* posicionar en columna 3, fila 2 */
+    grid-column: 3 / 5;
+    grid-row: 2 / 4;
+}
+
+/* ── DEMO 4: repeat + auto-fill / auto-fit ── */
+.gdemo-autofill {
+    display: grid;
+    /* auto-fill: crea tantas columnas como quepan de mínimo 100px */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.gdemo-autofit {
+    display: grid;
+    /* auto-fit: igual pero las columnas vacías colapsan a 0 */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+}
+
+/* ── DEMO 5: grid-template-areas ── */
+.gdemo-areas {
+    display: grid;
+    grid-template-columns: 160px 1fr 160px;
+    grid-template-rows: 44px 100px 44px;
+    gap: 8px;
+
+    /* Nombres de área asignados al layout */
+    grid-template-areas:
+        "header  header  header"
+        "sidebar main    aside"
+        "footer  footer  footer";
+}
+.ga-header  { grid-area: header;  }
+.ga-sidebar { grid-area: sidebar; }
+.ga-main    { grid-area: main;    }
+.ga-aside   { grid-area: aside;   }
+.ga-footer  { grid-area: footer;  }
+
+/* ============================================================================
+   9. FOOTER PROFESIONAL
+   GRID DEMO 4 — Layout del footer con Grid + areas
+   ============================================================================ */
 .footer-pro {
     background-color: var(--negro-suave);
     border-top: 1px solid var(--linea);
-    padding: 6rem 2rem 3rem; /* Más respiración */
+    padding: 6rem 2rem 3rem;
 }
 
-/* Grid del footer corporativo (BEM: .footer__grid) */
 .footer-grid {
     max-width: 1160px;
-    margin: 0 auto 5rem; /* Más espacio inferior */
+    margin: 0 auto 5rem;
+
+    /* CSS GRID en el footer */
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr; /* Mejor balance */
-    gap: 4rem; /* Más espacio entre columnas */
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+
+    grid-template-areas:
+        "marca  explorar  fuentes";
 }
 
-/* Columna de marca (BEM: .footer__brand) */
+.footer-marca    { grid-area: marca; }
+.footer-col:nth-child(2) { grid-area: explorar; }
+.footer-col:nth-child(3) { grid-area: fuentes; }
+
 .footer-logo {
     font-family: var(--serif);
     font-size: 2rem;
     font-weight: 700;
-    color: var(--blanco-premium);
+    color: var(--blanco);
     letter-spacing: -0.5px;
     margin-bottom: 1rem;
 }
-
-.footer-logo span {
-    color: var(--dorado);
-}
+.footer-logo span { color: var(--dorado); }
 
 .footer-slogan {
     font-size: 0.85rem;
@@ -364,7 +854,6 @@ body {
     line-height: 1.8;
 }
 
-/* Títulos de columna (BEM: .footer__column-title) */
 .footer-titulo-col {
     font-size: 0.7rem;
     font-weight: 600;
@@ -374,14 +863,12 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Enlaces del footer (BEM: .footer__links) */
 .footer-links {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
 }
-
 .footer-links a {
     font-size: 0.85rem;
     color: var(--gris-texto);
@@ -390,13 +877,11 @@ body {
     transition: color 0.2s ease, transform 0.2s ease;
     display: inline-block;
 }
-
 .footer-links a:hover {
-    color: var(--blanco-premium);
-    transform: translateX(3px); /* Pequeña interacción */
+    color: var(--blanco);
+    transform: translateX(3px);
 }
 
-/* Divisor corporativo minimalista */
 .footer-divisor {
     max-width: 1160px;
     margin: 0 auto 3rem;
@@ -404,23 +889,24 @@ body {
     background-color: var(--linea);
 }
 
-/* Parte inferior: Copyright, Legal y Créditos (BEM: .footer__bottom) */
 .footer-bottom {
     max-width: 1160px;
     margin: 0 auto;
+
+    /* FLEXBOX: distribuye copyright y créditos */
     display: flex;
-    justify-content: space-between; /* Alineación corporativa */
+    justify-content: space-between;
+    align-items: flex-end;
     gap: 2rem;
-    flex-wrap: wrap; /* Para móviles */
+    flex-wrap: wrap;
 }
 
 .footer-copyright {
     font-size: 0.75rem;
-    color: #666; /* Más oscuro, menos prominente */
+    color: #666;
     font-weight: 300;
     line-height: 1.8;
 }
-
 .footer-creditos {
     font-size: 0.75rem;
     color: #555;
@@ -428,34 +914,210 @@ body {
     text-align: right;
     line-height: 1.8;
 }
+.footer-creditos strong { color: #999; font-weight: 400; }
 
-.footer-creditos strong {
-    color: #999; /* Dorado muy apagado */
-    font-weight: 400;
+/* ============================================================================
+   10. SIDEBAR
+   FLEXBOX DEMO 8 — sidebar con flex-direction:column y justify-content
+   ============================================================================ */
+.sidebar {
+    width: 260px;
+    background-color: var(--negro-suave);
+    border-right: 1px solid var(--linea);
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    padding: 3rem 2rem;
+    z-index: 200;
+
+    /* FLEXBOX: columna con espacio entre logo e info */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* =============================================================================
-   8. RESPONSIVE DESIGN (MEDIA QUERIES) — Nivel Profesional
-   ============================================================================= */
+.sidebar-titulo {
+    font-family: var(--serif);
+    color: var(--blanco);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+.sidebar-titulo span { color: var(--dorado); }
 
-/* Tablet (hasta 1080px): 2 columnas */
-@media (max-width: 1080px) {
+.sidebar-info {
+    color: var(--gris-texto);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Navegación del sidebar */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    flex-grow: 1;
+}
+.sidebar-nav a {
+    font-size: 0.78rem;
+    color: var(--gris-texto);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--linea);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease;
+}
+.sidebar-nav a:hover { color: var(--dorado); }
+.sidebar-nav a span { color: var(--dorado); font-size: 0.65rem; }
+
+/* Contenido con sidebar: margin-left para no quedar detrás del panel fijo */
+.contenido-con-sidebar {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+}
+
+/* ============================================================================
+   11. CARRUSEL — AUTO-SCROLL INFINITO
+   ============================================================================ */
+.carrusel-seccion {
+    padding: 0 0 6rem;
+}
+
+.carrusel-header {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+
+    /* FLEXBOX: alinea etiqueta y hint */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.carrusel-hint {
+    font-size: 0.72rem;
+    color: var(--gris-texto);
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+.carrusel-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.carrusel-track {
+    display: flex;          /* FLEXBOX: fila horizontal de tarjetas */
+    flex-direction: row;
+    flex-wrap: nowrap;      /* nowrap — todas en una sola línea */
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding: 1rem 2rem 2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: auto; /* auto para que el JS controle la velocidad */
+}
+.carrusel-track::-webkit-scrollbar { display: none; }
+
+.carrusel-card {
+    /* flex-shrink:0 — las tarjetas no se encogen */
+    flex: 0 0 280px;
+    min-width: 280px;
+}
+
+/* Zonas sensibles */
+.zona-scroll {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: all;
+}
+.zona-izquierda {
+    left: 0;
+    background: linear-gradient(to right, rgba(4,4,4,0.9) 0%, transparent 100%);
+}
+.zona-derecha {
+    right: 0;
+    background: linear-gradient(to left, rgba(4,4,4,0.9) 0%, transparent 100%);
+}
+.zona-scroll:hover { opacity: 1; }
+.zona-flecha {
+    font-size: 3rem;
+    color: var(--dorado);
+    font-weight: 300;
+    user-select: none;
+}
+
+/* ============================================================================
+   12. RESPONSIVE — Media Queries
+   ============================================================================ */
+@media (max-width: 1200px) {
     .galeria-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
+    .flex-demos-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "direcciones  justify"
+            "align        wrap"
+            "order-grow   basis-shrink"
+            "self-content self-content";
+    }
+    .grid-demos-outer {
+        grid-template-columns: 1fr;
+    }
+    .gdemo-card.full { grid-column: 1 / -1; }
+}
+
+@media (max-width: 900px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-    }
-    .footer-col.footer-marca {
-        grid-column: span 2;
-        max-width: 100%;
-        margin-bottom: 1rem;
+        grid-template-areas:
+            "marca    marca"
+            "explorar fuentes";
     }
 }
 
-/* Móvil (hasta 650px): 1 columna */
+@media (max-width: 800px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--linea);
+        padding: 2rem;
+    }
+    .contenido-con-sidebar {
+        margin-left: 0;
+        width: 100%;
+    }
+    .flex-demos-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "direcciones"
+            "justify"
+            "align"
+            "wrap"
+            "order-grow"
+            "basis-shrink"
+            "self-content";
+    }
+}
+
 @media (max-width: 650px) {
     .galeria-grid {
         grid-template-columns: 1fr;
@@ -463,28 +1125,19 @@ body {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
-    }
-    .footer-col.footer-marca {
-        grid-column: span 1;
-    }
-    .hero-titulo {
-        font-size: clamp(2.8rem, 10vw, 4rem);
-    }
-    .footer-pro {
-        padding: 4rem 1.5rem 2rem;
+        grid-template-areas:
+            "marca"
+            "explorar"
+            "fuentes";
     }
     .footer-bottom {
         flex-direction: column;
-        text-align: left;
-        gap: 1.5rem;
+        align-items: flex-start;
     }
-    .footer-creditos {
-        text-align: left;
-    }
+    .footer-creditos { text-align: left; }
+    .hero-titulo { font-size: clamp(2.8rem, 10vw, 4rem); }
 }
 
-/* =============================================================================
-   FIN DEL ARCHIVO — futbol.css
-   Diseño Editorial Dark & Minimalista (World-Class Standard)
-   Camilo Meza — 2026
-   ============================================================================= */
+/* ============================================================================
+   FIN — futbol.css · GOAT·LIST · Camilo Meza · Riwi 2026
+   ============================================================================ */
